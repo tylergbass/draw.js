@@ -85,14 +85,14 @@ d.draw.arc({
 ```
 The colors used for fill and stroke values are very much the same as can be used in CSS, including hexadecimal, rgb(), hsl(), and [named colors](http://www.w3.org/TR/css3-color/#svg-color). Transparency can also be achieved using rgba() or hsla().
 
-###Changing the Renderer
+##Changing the Renderer
 Depending on which method renders faster or what needs arise, you may need to change renderers between canvas and SVG. This can be done by two methods. One method will clear the current shapes immediately, whereas the other will allow you to clear the shapes whenever it is convenient, such as when the next frame of an animation is rendered. Either way, the current contents will need to be removed for the new drawing method to go into effect.
 ```javascript
 d.changeRenderer("svg"); //immediately clears the frame and starts using svg
 d.renderer = "svg";      //will change to svg next time d.clearFrame() is called
 ```
 Additionally, you can read the `d.renderer` property to get the current renderer.
-###Implementing Animation
+##Implementing Animation
 Here is a simple example of how to implement an animation using draw.js.
 ```javascript
 d = draw.make(document.getElementById("draw")); //initialize the element
