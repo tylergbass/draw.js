@@ -37,15 +37,60 @@ Note that since these parameters are in the form of an object, they can be in an
 
 ###`line()`
 The `line()` function can be used to create lines, polylines, and polygons. The parameter `points`, used to define the location of points, takes an array.
+```javascript
+d.draw.line({
+	points: [
+		{x: 10, y: 10},
+		{x: 25, y: 40},
+		{x: 40, y: 10}
+	],
+	fill: "lightslategrey",
+	stroke: {
+		color: "darkslategrey",
+		width: 4,
+		join: "miter"
+	}
+});
+```
 To get a simple line from this function, just provide only two points. If you want the shape to be closed instead of open as this one is, add a last point that is the same as the first.
 
 ###`arc()`
 The `arc()` function is used to make circles and arcs. Remember that angles are in revolutions!
+```javascript
+d.draw.arc({
+	x: 25,
+	y: 25,
+	radius: 15,
+	start: 0,
+	end: 0.75,
+	fill: "lightslategrey",
+	stroke: {
+		color: "darkslategrey",
+		width: 4,
+		join: "miter"
+	}
+});
+```
 If you want a full circle instead of an arc, make sure that the end is 1 revolution greater than the start. Also, when drawing arcs or circles, make sure that your start value is smaller than your end value.
 
 ###`text()`
 The `text()` function renders text.
-A thing to keep in mind about text is that if you want to use both fill and stroke, Chrome on Windows won't position the fill and stroke quite at the same location. This is just a problem with Chrome and I sure hope it gets fixed soon.
+```javascript
+d.draw.text({
+	x: 10,
+	y: 30,
+	r: 0,
+	fill: "lightslategrey",
+	stroke: {
+		color: "darkslategrey",
+		width: 2,
+		join: "miter"
+	},
+	text: "ptchoooo",
+	font: "Courier New",
+	size: 16
+});
+```
 
 ###Fills and Strokes
 If you want to draw a shape with no fill or no stroke, you may simply omit the entire fill or stroke part, like this:
